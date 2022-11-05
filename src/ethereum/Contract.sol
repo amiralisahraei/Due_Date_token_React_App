@@ -47,6 +47,7 @@ contract SimpleToken is Context, ERC20 {
     }
 
     function removeFromBlacklist(address blackaddress) public OnlyOwner {
+        blackaddresss[blackaddress] = false; 
         for(uint j = 0; j < blacklist.length; j++) {
             if(blacklist[j] == blackaddress){
                 blacklist[j] = blacklist[blacklist.length-1];
@@ -88,6 +89,7 @@ contract SimpleToken is Context, ERC20 {
         _transfer(from, to, amount);
         return true;
     }
+
 
 
 
